@@ -62,7 +62,7 @@ def load_tf2_data():
 # SIDEBAR NAVIGATION & RISK PROFILE
 # ==========================================
 with st.sidebar:
-    st.title("⚡ TF3 Platform")
+    st.title("Aura Trader")
     st.caption("Autonomous Financial Intelligence")
     
     st.markdown("---")
