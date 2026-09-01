@@ -1,4 +1,4 @@
-#**Agent Architecture:(TF1)**
+# **Agent Architecture:(TF1)**
 
 The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects both numbers and news, cleans them up, and packages them neatly for trading decision software (TF2). It gathers information using two straightforward pathways:  
 
@@ -9,7 +9,7 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 3.**Data Packager**: Combines the live market numbers and the document findings into a single, organized JSON file (v2.0 format) that downstream systems can easily read. 
 
 
-#**Decision & Safety Logic:(TF1)**
+# **Decision & Safety Logic:(TF1)**
 
 1.**Backup Plan for Live Prices**: If live stock price data is missing or connection fails, the agent catches the error, sets the market status to "degraded," and fills in safe default values so the whole app doesn't crash. 
 
@@ -64,7 +64,7 @@ The TF3 Financial Intelligence Dashboard is a Streamlit-based web application de
 
 
 
-#**Decision & Safety Logic:(TF3)**
+#  **Decision & Safety Logic:(TF3)**
 
 1.The application requires several standard and third-party Python libraries: streamlit, json, os, pandas, numpy, and plotly (specifically plotly.graph_objects and plotly.express).
 
