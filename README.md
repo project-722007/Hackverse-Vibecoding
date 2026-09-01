@@ -1,4 +1,4 @@
-System Overview:
+Agent Architecture:
 
 The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects both numbers and news, cleans them up, and packages them neatly for trading decision software (TF2). It gathers information using two straightforward pathways:  
 
