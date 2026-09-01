@@ -1,0 +1,30 @@
+{
+  "contract_version": "2.0",
+  "metadata": {
+    "source_layer": "TF1_RETRIEVAL",
+    "timestamp": "2026-09-01T09:51:10Z",
+    "asset_id": "SWIGGY.NS"
+  },
+  "signal_inputs": {
+    "quantitative_metrics": {
+      "price_action": {
+        "current_price": 276.2,
+        "volume": 0,
+        "volume_ratio": 0.0
+      },
+      "technical_indicators": {
+        "rsi_14": 38.56,
+        "macd": -0.37,
+        "momentum_5d": -0.0027
+      },
+      "market_feed_degraded": false
+    },
+    "qualitative_context": {
+      "query": null,
+      "data_availability": null,
+      "fallback_active": false,
+      "missing_sources": [],
+      "documents": []
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "user_id": "usr_default",
+  "ticker": "SWIGGY.NS",
+  "action": "AVOID",
+  "confidence_score": 0.4,
+  "reasoning": "Given the user's LOW risk tolerance and focus on capital preservation, the active fallback mode and missing fundamental financial disclosures for SWIGGY.NS present an unacceptable level of operational and fundamental risk. Technical and sentiment metrics are neutral, but without verified fundamental context, initiating or maintaining exposure violates the strict drawdown limit of 10%.",
+  "risk_alignment": {
+    "profile_type": "LOW",
+    "max_drawdown_allocated": 0.1
+  },
+  "citations": [
+    "System Archive - Baseline Risk"
+  ],
+  "agent_traces": {
+    "technical": {
+      "rsi_14": 42.3,
+      "macd": -0.34,
+      "momentum_5d": -0.002,
+      "volume_ratio": 0.32,
+      "signal": "NEUTRAL",
+      "confidence": 0.65
+    },
+    "fundamental": {
+      "summary": "No disclosures were found for SWIGGY.NS as data availability is currently degraded and fallback mode is active.",
+      "risk_flags": [
+        "Data availability is degraded",
+        "Fallback mode active",
+        "Missing source document: Filing_SWIGGY.NS.pdf",
+        "No disclosures found for target entity"
+      ],
+      "citations": [
+        "System Archive - Baseline Risk"
+      ]
+    },
+    "sentiment": {
+      "overall_sentiment": "NEUTRAL",
+      "headline_summary": "Market sentiment remains neutral due to a lack of recent disclosures and limited data availability.",
+      "sentiment_score": 0.0
+    }
+  },
+  "degraded_data_notice": "Fundamental data availability is currently degraded and fallback mode is active.",
+  "performance_metrics": {
+    "risk_concentration_score": "10.0%",
+    "simulated_30d_forward_accuracy": "84.5%",
+    "execution_latency_seconds": 13.8658
+  }
+}
