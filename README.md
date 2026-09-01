@@ -34,7 +34,7 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 4.Omitting a custom user profile causes the system to automatically fall back to a low risk tolerance profile featuring a capital preservation mandate and a 10% maximum drawdown limit. 
 
 
-# **Structured Output Schemas:**
+# **Structured Output Schemas:(TF2)**
 
 1.TechnicalAgentOutput defines fields for 14-period RSI, MACD, 5-day momentum, volume ratio, categorical trading signals (BUY, SELL, NEUTRAL), and a confidence score between 0.0 and 1.0.
 
@@ -49,7 +49,7 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 6.TF2SynthesisOutput functions as the comprehensive master payload, tracking user IDs, tickers, final recommendations (BUY, HOLD, AVOID, NEUTRAL), confidence scores, reasoning, risk alignment, citations, agent traces, and optional degraded data notices.  
 
 
-# **Parallel Agent Execution Functions:**
+# **Parallel Agent Execution Functions:(TF2)**
 
 1.run_technical_agent prompts the LLM with quantitative market data to evaluate price momentum and generate structured technical signals.
 
@@ -58,7 +58,7 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 3.run_sentiment_agent assesses overarching market context and asset mood to establish sentiment alignment.  
 
 
-# **Master Orchestration & CIO Synthesis:**
+# **Master Orchestration & CIO Synthesis:(TF2)**
 
 1.synthesize_multi_agent initializes the ChatGoogleGenerativeAI wrapper using the gemini-3.6-flash model identifier configured with a temperature setting of 0.2. 
 
@@ -69,7 +69,7 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 4.A master prompt chain casts the LLM as a "Chief Investment Officer and Synthesis Master," balancing independent agent findings against user profile constraints to produce a unified recommendation payload.  
 
 
-# **File Processing & Execution Pipeline:**
+# **File Processing & Execution Pipeline:(TF2)**
 
 1.process_files reads input data from a specified JSON source path and triggers the asynchronous multi-agent pipeline workflow. 
 
