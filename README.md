@@ -25,23 +25,23 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 
 
 
-Agent Architecture:
+# **Agent Architecture:(TF3)**
 
 The TF3 Financial Intelligence Dashboard is a Streamlit-based web application designed to display autonomous financial intelligence. It serves as an executive interface for real-time multi-agent signal synthesis and portfolio analytics. The application reads synthesized financial data and visualizes actionable insights, execution metrics, and underlying agent reasoning.
 
 
 1.The application features a sidebar navigation menu with access to the "Dashboard", "Agent Traces", "Risk & Portfolio", and "System Logs".
 
-  i. Dashboard: Acts as the primary viewport containing executive summaries, action headers, interactive charts, and the AI assistant.
+  i. **Dashboard**: Acts as the primary viewport containing executive summaries, action headers, interactive charts, and the AI assistant.
 
 
-  ii. Agent Traces: Acts as a diagnostic view to inspect the raw JSON outputs of the specialized sub-agents.
+  ii. **Agent Traces**: Acts as a diagnostic view to inspect the raw JSON outputs of the specialized sub-agents.
 
 
-  iii. Risk & Portfolio: Displays the active behavioral constraints alongside the active user ID and simulated forward performance metrics.
+  iii. **Risk & Portfolio**: Displays the active behavioral constraints alongside the active user ID and simulated forward performance metrics.
 
 
-  iv. System Logs: Renders the complete, raw JSON payload for deep system inspection.
+  iv. **System Logs**: Renders the complete, raw JSON payload for deep system inspection.
 
 
 2.Users can customize a "User Behavioral Profile" by adjusting their Risk Tolerance, Mandate, and Max Drawdown Limit.
@@ -64,7 +64,7 @@ The TF3 Financial Intelligence Dashboard is a Streamlit-based web application de
 
 
 
-Decision & Safety Logic:
+#**Decision & Safety Logic:(TF3)**
 
 1.The application requires several standard and third-party Python libraries: streamlit, json, os, pandas, numpy, and plotly (specifically plotly.graph_objects and plotly.express).
 
