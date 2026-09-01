@@ -23,6 +23,62 @@ The agent works as an intelligent data pipeline (TF1 RETRIEVAL) that collects bo
 
 6.**Dynamic Signal Schema**: Outputs a contract (v2.0) that explicitly reports system status flags (market feed degraded, fallback active, data availability) so downstream evaluation models know whether to rely on full signal strength or apply precautionary risk adjustments.
 
+# **System Architecture & Tech Stack:(TF2)**
+
+1.The engine is built using Python, leveraging asyncio for asynchronous concurrency and Pydantic for strict data validation schemas.  
+
+2.It integrates LangChain components including ChatGoogleGenerativeAI and ChatPromptTemplate to manage model communication. 
+
+3.Execution requires a valid GOOGLE_API_KEY environment variable to authenticate with Google's generative models.  
+
+4.Omitting a custom user profile causes the system to automatically fall back to a low risk tolerance profile featuring a capital preservation mandate and a 10% maximum drawdown limit. 
+
+
+# **Structured Output Schemas:**
+
+1.TechnicalAgentOutput defines fields for 14-period RSI, MACD, 5-day momentum, volume ratio, categorical trading signals (BUY, SELL, NEUTRAL), and a confidence score between 0.0 and 1.0.
+
+2.FundamentalAgentOutput captures qualitative summaries, identified risk flags, and source document citations extracted from RAG contexts. 
+
+3.SentimentAgentOutput tracks overall sentiment categories (BULLISH, BEARISH, NEUTRAL), headline summaries, and numerical sentiment scores ranging from -1.0 to 1.0. 
+
+4.RiskAlignment structures the profile type and allocated maximum drawdown parameters. 
+
+5.AgentTraces encapsulates the nested outputs of the technical, fundamental, and sentiment agents into a unified object.
+
+6.TF2SynthesisOutput functions as the comprehensive master payload, tracking user IDs, tickers, final recommendations (BUY, HOLD, AVOID, NEUTRAL), confidence scores, reasoning, risk alignment, citations, agent traces, and optional degraded data notices.  
+
+
+# **Parallel Agent Execution Functions:**
+
+1.run_technical_agent prompts the LLM with quantitative market data to evaluate price momentum and generate structured technical signals.
+
+2.run_fundamental_agent processes qualitative document chunks, regulatory disclosures, and filings to extract core fundamental findings. 
+
+3.run_sentiment_agent assesses overarching market context and asset mood to establish sentiment alignment.  
+
+
+# **Master Orchestration & CIO Synthesis:**
+
+1.synthesize_multi_agent initializes the ChatGoogleGenerativeAI wrapper using the gemini-3.6-flash model identifier configured with a temperature setting of 0.2. 
+
+2.It parses asset tickers, quantitative metrics, and qualitative RAG context directly from Task Force 1 input dictionaries. 
+
+3.It concurrently executes all three specialized agent coroutines using asyncio.gather() to minimize processing latency.
+
+4.A master prompt chain casts the LLM as a "Chief Investment Officer and Synthesis Master," balancing independent agent findings against user profile constraints to produce a unified recommendation payload.  
+
+
+# **File Processing & Execution Pipeline:**
+
+1.process_files reads input data from a specified JSON source path and triggers the asynchronous multi-agent pipeline workflow. 
+
+2.It logs runtime execution latency in seconds and populates performance metrics including risk concentration scores and simulated 30-day forward accuracy. 
+
+3.Final outputs are serialized and written to a target JSON file path, defaulting to tf2_output.json. 
+
+4.The script supports direct command-line argument passing or executes default local file workflows (tf1_output.json to tf2_output.json) when invoked independently.
+
 
 
 # **Agent Architecture:(TF3)**
